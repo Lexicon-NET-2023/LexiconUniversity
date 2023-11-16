@@ -10,6 +10,10 @@ namespace University.Web.AutoMapperConfig
                 .ReverseMap();
 
             CreateMap<Student, StudentIndexViewModel>();
+            CreateMap<Student, StudentDetailsViewModel>()
+                .ForMember(
+                dest => dest.Attending,
+                from => from.MapFrom(s => s.Courses.Count));
         }
     }
 }
