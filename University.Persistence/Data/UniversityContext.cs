@@ -18,7 +18,8 @@ namespace University.Persistence.Data
         }
 
         public DbSet<Student> Student { get; set; } = default!;
-        // public DbSet<Enrollment> Enrollments { get; set; } = default!;
+        public DbSet<Enrollment> Enrollment { get; set; } = default!;
+        public DbSet<Course> Course { get; set; } = default!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
