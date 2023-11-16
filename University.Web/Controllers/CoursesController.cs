@@ -22,6 +22,13 @@ namespace University.Web.Controllers
         // GET: Courses
         public async Task<IActionResult> Index()
         {
+
+             var courses = _context.Course.Select(c => new { c.Title, Start = EF.Property<DateTime>(c, "PeriodStart")}).ToList();
+
+            var all = _context.Course.TemporalAll();
+
+
+
               return _context.Course != null ? 
                           View(await _context.Course.ToListAsync()) :
                           Problem("Entity set 'UniversityContext.Course'  is null.");
