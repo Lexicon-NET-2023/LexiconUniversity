@@ -61,6 +61,7 @@ namespace University.Web.Controllers
         }
 
         // GET: Students/Details/5
+        [RequiredModel]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || db.Student == null)
@@ -70,12 +71,6 @@ namespace University.Web.Controllers
 
             var student = await mapper.ProjectTo<StudentDetailsViewModel>(db.Student)
                 .FirstOrDefaultAsync(s => s.Id == id);
-
-           
-            if (student == null)
-            {
-                return NotFound();
-            }
 
             return View(student);
         }
