@@ -7,9 +7,6 @@ namespace University.Web.AutoMapperConfig
         public UniversityMappings()
         {
             CreateMap<Student, StudentCreateViewModel>()
-                //.ForMember(
-                //dest => dest.Street,
-                //from => from.MapFrom(s => s.Avatar))
                 .ReverseMap();
 
             CreateMap<Student, StudentIndexViewModel>();

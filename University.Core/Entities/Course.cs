@@ -16,4 +16,14 @@ namespace University.Core.Entities
         public ICollection<Enrollment> Enrollments { get; set; }
         public ICollection<Student> Students { get; set; }
     }
+
+    //public class Employee
+    //{
+    //    ICollection<Jobb> Jobb { get; set; }
+    //}
+
+    //public class Jobb
+    //{
+    //    ICollection<Employee> Employee { get; set; }
+    //}
 }
