@@ -4,6 +4,7 @@ using University.Persistence;
 using University.Persistence.Data;
 using University.Web.AutoMapperConfig;
 using University.Web.Extensions;
+using University.Web.Filters;
 
 namespace University.Web
 {
@@ -17,6 +18,11 @@ namespace University.Web
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            //    (opt =>
+            //{
+            //    opt.Filters.Add(typeof(ModelStateIsValid));
+            //});
+
             builder.Services.AddAutoMapper(typeof(UniversityMappings));
 
             var app = builder.Build();
